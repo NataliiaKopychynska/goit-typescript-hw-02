@@ -121,7 +121,11 @@ function App() {
       {isError === true && <ErrorMessage />}
       {/* {photos.length === 0 && <ErrorMessage />} */}
       {isLoading === true && <Loader />}
-      <ImageGallery photos={photos} onOpenModal={handleClickImgModal} />
+      <ImageGallery
+        photos={photos}
+        onOpenModal={handleClickImgModal}
+        query={query}
+      />
       {photos.length > 0 && <LoadMoreBtn onLoadMore={handleLoadMore} />}
       <ToastContainer />
       <ImageModal

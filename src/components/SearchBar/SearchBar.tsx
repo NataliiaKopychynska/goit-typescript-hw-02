@@ -16,6 +16,7 @@ export default function SearchBar({ onSearchValue }: SearchBarProps) {
       return;
     }
     onSearchValue(value);
+    setValue("");
   };
   return (
     <>
