@@ -9,7 +9,7 @@ import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 // import { toast, ToastContainer } from "react-toastify";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { Photo } from "./App.types";
 
 const KAY_API = "xdjkac150CbFCNeS7Q-go_I-69rjDCCNi2TdpSdj0Mo";
@@ -68,33 +68,34 @@ function App() {
 
   const handleSearchValue = (newQuery: string) => {
     if (newQuery === query) {
-      // setIsError(true);
-      // setPhotos([]);
-      // setPage(1);
+      setIsError(true);
+      setPhotos([]);
+      setPage(1);
       return;
     }
     setQuery(newQuery);
     setPhotos([]);
     setPage(1);
 
-    // if (photos.length === 0) {
-    //   setIsError(true);
-    //   toast("Please enter new prompt");
-    // }
+    if (photos.length === 0) {
+      // setIsError(true);
+      toast("Please enter new prompt");
+    }
   };
 
-  // useEffect(() => {
-  //   if (photos.length === 0 && query.trim()) {
-  //     setIsError(true);
-  //     toast("Please enter new prompt");
-  //   }
-  // }, [photos, query]);
+  useEffect(() => {
+    if (photos.length === 0 && query.trim()) {
+      // setIsError(true);
+      toast("Please enter new prompt");
+    }
+  }, [photos, query]);
 
   const handleClickImgModal = (e: React.MouseEvent<HTMLLIElement>) => {
     const imgId = e.currentTarget.id;
     const findImg = photos.find((img) => img.id === imgId);
 
     if (!findImg) {
+      toast("Image not found");
       console.error("Image not found");
       return;
     }
