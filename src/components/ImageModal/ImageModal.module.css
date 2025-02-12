@@ -13,14 +13,14 @@
 }
 .modalContainer {
   position: relative;
-  box-sizing: border-box;
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   align-items: center;
   width: 900px;
-  height: 90vh;
+  max-height: 90vh;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
