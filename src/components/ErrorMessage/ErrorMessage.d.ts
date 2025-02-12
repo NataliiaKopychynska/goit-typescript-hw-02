@@ -1,0 +1,1 @@
+export default function ErrorMessage(): import("react/jsx-runtime").JSX.Element;

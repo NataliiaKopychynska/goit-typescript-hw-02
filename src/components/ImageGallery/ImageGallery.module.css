@@ -1,0 +1,30 @@
+.list {
+  margin-top: 80px;
+  display: grid;
+  gap: 16px;
+  list-style-type: none;
+}
+
+@media (min-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки на великих екранах */
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки на середніх екранах */
+  }
+}
+
+@media (min-width: 400px) and (max-width: 899px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на маленьких екранах */
+  }
+}
+
+@media (max-width: 399px) {
+  .list {
+    grid-template-columns: 1fr; /* 1 колонка на дуже вузьких екранах */
+  }
+}
