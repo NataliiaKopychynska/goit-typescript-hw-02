@@ -78,15 +78,15 @@ function App() {
     setPage(1);
 
     if (photos.length === 0) {
-      // setIsError(true);
-      toast("Please enter new prompt");
+      setIsError(true);
+      // toast("Please enter new prompt");
     }
   };
 
   useEffect(() => {
     if (photos.length === 0 && query.trim()) {
       // setIsError(true);
-      toast("Please enter new prompt");
+      // toast("Please enter new prompt", { autoClose: 3000 });
     }
   }, [photos, query]);
 
@@ -95,7 +95,7 @@ function App() {
     const findImg = photos.find((img) => img.id === imgId);
 
     if (!findImg) {
-      toast("Image not found");
+      toast("Image not found", { autoClose: 3000 });
       console.error("Image not found");
       return;
     }

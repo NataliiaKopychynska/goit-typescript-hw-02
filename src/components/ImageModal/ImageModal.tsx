@@ -52,7 +52,7 @@ export default function ImageModal({
                 selectedImg.alt_description || "Image description not available"
               }
             />
-            <p>
+            <p className={s.modalTitle}>
               {selectedImg.alt_description || "Image description not available"}
             </p>
             <button onClick={onClose} className={s.closerBTN}>

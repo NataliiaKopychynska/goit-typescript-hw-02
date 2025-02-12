@@ -29,7 +29,7 @@
 
 .modalImg {
   border-radius: 8px;
-  margin-top: 24px;
+  /* margin-top: 24px; */
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -52,4 +52,8 @@
     cursor: pointer;
     border-color: #646cff;
   }
+}
+
+.modalTitle {
+  margin: 12px 0 0 0;
 }
